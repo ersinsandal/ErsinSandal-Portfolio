@@ -47,14 +47,13 @@
 
 ## 💡 Executive Summary
 
-This repository contains the source code for the official executive portfolio and digital showcase of **Ersin Sandal** — Tech Entrepreneur, Computer Engineer, and Founder & CEO of **SliferSoft**.
+This repository contains the source code for the official executive portfolio and digital showcase of **Ersin Sandal** — Tech Entrepreneur, Political Strategist, Media Executive, Computer Engineer, and Founder & CEO of **SliferSoft**.
 
-The application is engineered as a lightning-fast, ultra-responsive Single Page Application (SPA) designed to reflect deep technical mastery across multiple computer science disciplines:
-- **Full-Stack Software Architecture** (Scalable web systems, micro-frontends, REST/WebSocket APIs)
-- **Decentralized & Cryptographic Systems** (Zero-Knowledge Proofs with Groth16, Spatial Encrypted Networks)
-- **Systems & Desktop Engineering** (Native Windows DPAPI encryption, DASH streaming, multi-threaded reverse proxies)
-- **Computer Vision & Applied AI** (Feature engineering, HOG/LBP descriptors, support vector machines)
-- **Competitive Esports & Community Ecosystems** (Next.js 15 App Router platform, tournament engines)
+The application is engineered as a lightning-fast, ultra-responsive Single Page Application (SPA) designed to reflect multidisciplinary leadership across four core pillars:
+- **Tech Entrepreneurship & Product Leadership:** Founding and directing scalable ventures (SliferSoft, ATE Digital Arena), transforming high-level product vision into production-ready platforms.
+- **Political Strategy & Public Engagement:** Pioneering digital-first youth mobilization movements, opinion polling architectures (A******t, 36,000+ audience), and civic engagement initiatives.
+- **Media & Digital Growth:** Architecting viral organic growth models, social media campaigns, community operations (10,000+ audience), and independent esports media ecosystems.
+- **Deep Software Engineering:** Advanced systems engineering spanning Zero-Knowledge Proofs (Groth16), spatial cryptographic networks (NaviSecret), high-performance desktop tools with Windows DPAPI (StorySepeti), and experimental network security research (LuckyLick).
 
 The live production deployment is accessible at **[ersinsandal.com](https://ersinsandal.com)**.
 

@@ -42,14 +42,13 @@
 
 ## 💡 Yönetici Özeti
 
-Bu repo; Teknoloji Girişimcisi, Bilgisayar Mühendisi ve **SliferSoft** Kurucu & CEO'su **Ersin Sandal**'ın resmî portfolyosunun ve girişim ekosisteminin kaynak kodlarını içerir.
+Bu repo; Teknoloji Girişimcisi, Siyasetçi, Medya Yöneticisi, Bilgisayar Mühendisi ve **SliferSoft** Kurucu & CEO'su **Ersin Sandal**'ın resmî portfolyosunun ve çok yönlü girişim ekosisteminin kaynak kodlarını içerir.
 
-Uygulama; bilgisayar bilimlerinin farklı disiplinlerindeki derin teknik uzmanlığı yansıtacak şekilde ultra hızlı, tam duyarlı ve modern bir Tek Sayfa Uygulaması (SPA) olarak geliştirilmiştir:
-- **Tam Yığın Yazılım Mimarisi** (Ölçeklenebilir web sistemleri, mikro ön yüzler, REST/WebSocket API'leri)
-- **Kriptografik ve Dağıtık Sistemler** (Groth16 zk-SNARK Sıfır-Bilgi İspatları, Mekânsal Şifreli Ağlar)
-- **Sistem ve Masaüstü Mühendisliği** (Windows DPAPI şifreleme, DASH medya akış birleştirme, çok iş parçacıklı ters vekil sunucuları)
-- **Bilgisayarlı Görü ve Uygulamalı Yapay Zekâ** (Öznitelik mühendisliği, HOG/LBP tanımlayıcıları, destek vektör makineleri)
-- **Rekabetçi E-Spor ve Dijital Platformlar** (Next.js 15 App Router platformu, turnuva motorları)
+Uygulama; yalnızca saf bir yazılım vitrini değil, dört ana eksendeki stratejik ve operasyonel liderliği yansıtacak şekilde ultra hızlı, modern bir Tek Sayfa Uygulaması (SPA) olarak geliştirilmiştir:
+- **Teknoloji Girişimciliği ve Ürün Liderliği:** SliferSoft ve ATE Digital Arena gibi bağımsız teknoloji yapılarını kurma; üst düzey ürün vizyonunu çalışan, ölçeklenebilir dijital sistemlere dönüştürme.
+- **Siyaset, Dijital Örgütlenme ve Kamuoyu:** Dijital gençlik hareketleri, yeni nesil kamuoyu araştırma ve etkileşim sistemleri (A******t, 36.000+ kitle) ve sivil toplum etki platformları inşa etme vizyonu.
+- **Medya, İçerik ve Büyüme Stratejisi:** Organik kitle büyütme mekanizmaları, sosyal medya içerik ekosistemleri (10.000+ kitle) ve bağımsız e-spor medya markası operasyonları.
+- **İleri Düzey Yazılım ve Sistem Mühendisliği:** Sıfır-Bilgi Kanıtları (ZKP Groth16), kriptografik mekânsal ağlar (NaviSecret), Windows DPAPI şifrelemeli masaüstü yazılımları (StorySepeti) ve deneysel siber güvenlik araştırmaları (LuckyLick).
 
 Canlı yayındaki sisteme **[ersinsandal.com](https://ersinsandal.com)** adresinden erişilebilir.
 
