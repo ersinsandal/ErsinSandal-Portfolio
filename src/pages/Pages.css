@@ -875,65 +875,40 @@ textarea.form-control {
 
 /* Envision Accordion Banner (Projects.jsx) */
 .envision-accordion-banner {
-  border-radius: 20px;
-  margin-top: -1.25rem;
+  border-radius: 14px;
+  margin-top: -1.75rem;
   margin-bottom: 2.75rem;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(155, 17, 30, 0.2);
-  box-shadow: 0 8px 24px -8px rgba(155, 17, 30, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
-  background: linear-gradient(155deg, rgba(255, 255, 255, 0.94) 0%, rgba(248, 248, 250, 0.98) 100%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   scroll-margin-top: 100px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s ease;
 }
 
 .envision-accordion-banner:hover {
-  border-color: rgba(155, 17, 30, 0.35);
-}
-
-.envision-accordion-banner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3.5px;
-  background: linear-gradient(90deg, #9B111E 0%, #E63946 50%, #9B111E 100%);
+  border-color: rgba(155, 17, 30, 0.28);
+  box-shadow: 0 6px 20px rgba(155, 17, 30, 0.04);
 }
 
 .envision-accordion-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.6rem;
+  padding: 0.95rem 1.4rem;
   cursor: pointer;
   user-select: none;
   transition: background 0.2s ease;
 }
 
 .envision-accordion-bar:hover {
-  background: rgba(155, 17, 30, 0.025);
+  background: rgba(0, 0, 0, 0.015);
 }
 
 .accordion-left {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-}
-
-.accordion-brand-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: rgba(155, 17, 30, 0.08);
-  color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.accordion-titles {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -942,19 +917,23 @@ textarea.form-control {
 
 .accordion-main-title {
   font-family: var(--font-display);
-  font-size: 1.12rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--color-text-main);
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
 }
 
-.accordion-tag {
-  font-size: 0.82rem;
-  color: var(--color-text-muted);
+.accordion-sep {
+  color: rgba(0, 0, 0, 0.25);
+  font-size: 0.9rem;
+}
+
+.accordion-subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--color-primary);
   font-weight: 500;
-  padding: 0.2rem 0.65rem;
-  border-radius: 6px;
-  background: rgba(0, 0, 0, 0.04);
 }
 
 .accordion-right {
@@ -965,39 +944,41 @@ textarea.form-control {
 .accordion-toggle-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 1.1rem;
-  border-radius: 100px;
-  background: rgba(155, 17, 30, 0.08);
-  border: 1px solid rgba(155, 17, 30, 0.25);
-  color: var(--color-primary);
+  gap: 0.45rem;
+  padding: 0.42rem 0.95rem;
+  border-radius: 8px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--color-text-main);
   font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
 }
 
 .accordion-toggle-btn:hover {
-  background: var(--color-primary);
+  background: #18181C;
   color: #FFFFFF;
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 14px rgba(155, 17, 30, 0.3);
+  border-color: #18181C;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .accordion-arrow {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.2s ease;
 }
 
 .envision-accordion-body {
   overflow: hidden;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(250, 250, 252, 0.6);
 }
 
 .envision-projects-content {
-  padding: 1.75rem 1.75rem 2rem;
+  padding: 1.75rem 1.6rem 2rem;
   position: relative;
   z-index: 1;
 }
@@ -1022,26 +1003,26 @@ textarea.form-control {
 .envision-pillar-card {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  padding: 1.35rem;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: 0.85rem;
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s ease;
 }
 
 .envision-pillar-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(155, 17, 30, 0.3);
-  box-shadow: 0 10px 24px rgba(155, 17, 30, 0.08);
+  transform: translateY(-2px);
+  border-color: rgba(155, 17, 30, 0.25);
+  box-shadow: 0 6px 16px rgba(155, 17, 30, 0.05);
 }
 
 .envision-pillar-card .pillar-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: rgba(155, 17, 30, 0.08);
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(155, 17, 30, 0.06);
   color: var(--color-primary);
   display: flex;
   align-items: center;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { Cpu, Radio, Users, Globe, ChevronDown, ChevronUp } from 'lucide-react';
+import { Cpu, Radio, Users, ChevronDown, ChevronUp } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import { projectsData } from '../data/projectsData';
 import './Pages.css';
@@ -39,11 +39,9 @@ const Projects = () => {
           onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleAccordion(); } }}
         >
           <div className="accordion-left">
-            <span className="accordion-brand-icon"><Globe size={18} /></span>
-            <div className="accordion-titles">
-              <span className="accordion-main-title">ENVISION STATION</span>
-              <span className="accordion-tag">Çok Disiplinli Üretim Mimarisi</span>
-            </div>
+            <span className="accordion-main-title">ENVISION STATION</span>
+            <span className="accordion-sep" aria-hidden="true">—</span>
+            <span className="accordion-subtitle">Vizyonun Ortak Merkezi</span>
           </div>
 
           <div className="accordion-right">
@@ -53,9 +51,9 @@ const Projects = () => {
               onClick={(e) => { e.stopPropagation(); toggleAccordion(); }}
               aria-expanded={isOpen}
             >
-              <span>{isOpen ? 'Detayları Gizle' : 'Mimari Detayları İncele'}</span>
+              <span>{isOpen ? 'Detayları Kapat' : 'Ekosistem Detayları'}</span>
               <span className="accordion-arrow">
-                {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                {isOpen ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
               </span>
             </button>
           </div>
@@ -78,7 +76,7 @@ const Projects = () => {
                   </p>
                   <p>
                     Buradaki projeler tek başına çalışan izole fikirler değildir. Envision Station; sağlam bir mühendislik omurgasını, 
-                    dijital yayıncılık ve medya gücünü ve organik topluluk etkileşimini tek bir stratejik çatı altında buluşturur. 
+                    dijital yayıncılık ve medya dinamiklerini ve organik topluluk etkileşimini tek bir stratejik çatı altında buluşturur. 
                     Böylece her yeni girişim, sıfırdan başlamak yerine bu ortak altyapıdan ve sinerjiden beslenerek çok daha hızlı, 
                     güvenli ve sürdürülebilir bir şekilde hayata geçer.
                   </p>
@@ -86,26 +84,26 @@ const Projects = () => {
 
                 <div className="envision-projects-pillars">
                   <div className="envision-pillar-card">
-                    <div className="pillar-icon"><Cpu size={22} /></div>
+                    <div className="pillar-icon"><Cpu size={20} /></div>
                     <div className="pillar-info">
-                      <h4>Ortak Mühendislik Altyapısı</h4>
-                      <p>Geliştirilen çekirdek sistemler, yazılım mimarileri ve standartlar, ekosistemdeki tüm ürünlerin teknik kalitesini ve geliştirme hızını artırır.</p>
+                      <h4>Teknoloji & Yazılım Mimarisi</h4>
+                      <p>Ölçeklenebilir dijital ürünler, yazılım mühendisliği, sistem altyapısı ve yenilikçi çözümler üreten teknik omurga.</p>
                     </div>
                   </div>
 
                   <div className="envision-pillar-card">
-                    <div className="pillar-icon"><Radio size={22} /></div>
+                    <div className="pillar-icon"><Radio size={20} /></div>
                     <div className="pillar-info">
-                      <h4>Çapraz Medya & İletişim Gücü</h4>
-                      <p>Projeler; dijital yayıncılık, teknik prodüksiyon ve kurumsal temsil dinamikleriyle doğrudan görünürlük ve kitle bağı kazanır.</p>
+                      <h4>Medya & Stratejik İletişim</h4>
+                      <p>Dijital yayıncılık, teknik prodüksiyon ve kurumsal temsil dinamikleriyle doğrudan görünürlük ve kitle bağı.</p>
                     </div>
                   </div>
 
                   <div className="envision-pillar-card">
-                    <div className="pillar-icon"><Users size={22} /></div>
+                    <div className="pillar-icon"><Users size={20} /></div>
                     <div className="pillar-info">
-                      <h4>Organik Topluluk Sinerjisi</h4>
-                      <p>36.000'i aşkın aktif dijital kitle ölçeği ve kullanıcı geri bildirimleri, ürünlerin gerçek ihtiyaçlara göre evrilmesini ve benimsenmesini sağlar.</p>
+                      <h4>Topluluk & Organizasyon Yönetimi</h4>
+                      <p>Ortak paydada buluşan kitle ağları, sivil inisiyatifler ve sürdürülebilir yönetim zeminleri.</p>
                     </div>
                   </div>
                 </div>
