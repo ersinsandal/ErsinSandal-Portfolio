@@ -2,10 +2,10 @@
   <img src="public/sitelogo.png" alt="Ersin Sandal Logo" width="180" />
 </p>
 
-<h1 align="center">Ersin Sandal — Mühendislik Portfolyosu ve Dijital Ekosistem</h1>
+<h1 align="center">Ersin Sandal — Portfolyo ve Dijital Ekosistem</h1>
 
 <p align="center">
-  <strong>Resmî Kişisel Web Sitesi, Girişim Vitrini ve Yüksek Performanslı Mühendislik Portfolyosu</strong><br />
+  <strong>Resmî Kişisel Web Sitesi, Girişim Vitrini ve Yönetici Portfolyosu</strong><br />
   <em>React 19, Vite, Framer Motion ve Kurumsal Modern Web Mimarisi ile Geliştirilmiştir.</em>
 </p>
 
@@ -42,7 +42,7 @@
 
 ## 💡 Yönetici Özeti
 
-Bu repo, Bilgisayar Mühendisi, Teknoloji Girişimcisi ve **SliferSoft** Kurucu & CEO'su **Ersin Sandal**'ın resmî mühendislik portfolyosunun kaynak kodlarını içerir.
+Bu repo; Teknoloji Girişimcisi, Bilgisayar Mühendisi ve **SliferSoft** Kurucu & CEO'su **Ersin Sandal**'ın resmî portfolyosunun ve girişim ekosisteminin kaynak kodlarını içerir.
 
 Uygulama; bilgisayar bilimlerinin farklı disiplinlerindeki derin teknik uzmanlığı yansıtacak şekilde ultra hızlı, tam duyarlı ve modern bir Tek Sayfa Uygulaması (SPA) olarak geliştirilmiştir:
 - **Tam Yığın Yazılım Mimarisi** (Ölçeklenebilir web sistemleri, mikro ön yüzler, REST/WebSocket API'leri)

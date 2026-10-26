@@ -2,10 +2,10 @@
   <img src="public/sitelogo.png" alt="Ersin Sandal Logo" width="180" />
 </p>
 
-<h1 align="center">Ersin Sandal — Engineering Portfolio & Digital Ecosystem</h1>
+<h1 align="center">Ersin Sandal — Portfolio & Digital Ecosystem</h1>
 
 <p align="center">
-  <strong>Official Personal Website, Venture Showcase, and High-Performance Engineering Portfolio</strong><br />
+  <strong>Official Personal Website, Venture Showcase, and Executive Portfolio</strong><br />
   <em>Engineered with React 19, Vite, Framer Motion, and Enterprise-Grade Modern Web Architecture.</em>
 </p>
 
@@ -47,7 +47,7 @@
 
 ## 💡 Executive Summary
 
-This repository contains the source code for the official executive engineering portfolio and digital showcase of **Ersin Sandal** — Computer Engineer, Tech Entrepreneur, and Founder & CEO of **SliferSoft**.
+This repository contains the source code for the official executive portfolio and digital showcase of **Ersin Sandal** — Tech Entrepreneur, Computer Engineer, and Founder & CEO of **SliferSoft**.
 
 The application is engineered as a lightning-fast, ultra-responsive Single Page Application (SPA) designed to reflect deep technical mastery across multiple computer science disciplines:
 - **Full-Stack Software Architecture** (Scalable web systems, micro-frontends, REST/WebSocket APIs)
