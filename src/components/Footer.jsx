@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaGithub, FaEnvelope } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -17,6 +17,7 @@ const Footer = () => {
               <Link to="/hakkimda" className="hover-underline">Hakkımda</Link>
               <Link to="/deneyim" className="hover-underline">Deneyim</Link>
               <Link to="/projeler" className="hover-underline">Projeler</Link>
+              <Link to="/medya" className="hover-underline">Haberler</Link>
             </div>
             <div className="link-group">
               <h3>Bağlantılar</h3>
@@ -26,6 +27,9 @@ const Footer = () => {
                 </a>
                 <a href="https://instagram.com/ersinsandal" target="_blank" rel="noreferrer" className="social-icon">
                   <FaInstagram className="icon" /> Instagram
+                </a>
+                <a href="https://github.com/ersinsandal" target="_blank" rel="noreferrer" className="social-icon">
+                  <FaGithub className="icon" /> GitHub
                 </a>
                 <a href="mailto:info@ersinsandal.com" className="social-icon">
                   <FaEnvelope className="icon" /> E-mail
