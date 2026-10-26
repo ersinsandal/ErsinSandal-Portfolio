@@ -873,72 +873,140 @@ textarea.form-control {
   transform: translateX(5px);
 }
 
-/* Envision Projects Banner (Projects.jsx) */
-.envision-projects-banner {
-  border-radius: 28px;
-  padding: 3rem;
-  margin-top: 1.5rem;
-  margin-bottom: 3.5rem;
+/* Envision Accordion Banner (Projects.jsx) */
+.envision-accordion-banner {
+  border-radius: 20px;
+  margin-top: -1.25rem;
+  margin-bottom: 2.75rem;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(155, 17, 30, 0.22);
-  box-shadow: 0 25px 50px -12px rgba(155, 17, 30, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  border: 1px solid rgba(155, 17, 30, 0.2);
+  box-shadow: 0 8px 24px -8px rgba(155, 17, 30, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
   background: linear-gradient(155deg, rgba(255, 255, 255, 0.94) 0%, rgba(248, 248, 250, 0.98) 100%);
-  scroll-margin-top: 110px;
+  scroll-margin-top: 100px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.envision-projects-banner::before {
+.envision-accordion-banner:hover {
+  border-color: rgba(155, 17, 30, 0.35);
+}
+
+.envision-accordion-banner::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 4.5px;
+  height: 3.5px;
   background: linear-gradient(90deg, #9B111E 0%, #E63946 50%, #9B111E 100%);
 }
 
-.envision-projects-glow {
-  position: absolute;
-  top: -120px;
-  right: -120px;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(155, 17, 30, 0.08) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
+.envision-accordion-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.6rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease;
+}
+
+.envision-accordion-bar:hover {
+  background: rgba(155, 17, 30, 0.025);
+}
+
+.accordion-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.accordion-brand-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(155, 17, 30, 0.08);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.accordion-titles {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.accordion-main-title {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  letter-spacing: -0.01em;
+}
+
+.accordion-tag {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  padding: 0.2rem 0.65rem;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.accordion-right {
+  display: flex;
+  align-items: center;
+}
+
+.accordion-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 100px;
+  background: rgba(155, 17, 30, 0.08);
+  border: 1px solid rgba(155, 17, 30, 0.25);
+  color: var(--color-primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.accordion-toggle-btn:hover {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 14px rgba(155, 17, 30, 0.3);
+}
+
+.accordion-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.envision-accordion-body {
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .envision-projects-content {
+  padding: 1.75rem 1.75rem 2rem;
   position: relative;
   z-index: 1;
 }
 
-.envision-projects-header {
-  margin-bottom: 1.5rem;
-}
-
-.envision-projects-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 3.2vw, 2.4rem);
-  font-weight: 800;
-  color: var(--color-text-main);
-  margin: 0 0 0.35rem 0;
-  letter-spacing: -0.02em;
-}
-
-.envision-projects-lead {
-  font-size: 1.12rem;
-  color: var(--color-primary);
-  font-weight: 600;
-  line-height: 1.6;
-  margin: 0.5rem 0 0 0;
-}
-
 .envision-projects-desc {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   color: #2D2D32;
-  line-height: 1.8;
-  margin-bottom: 2rem;
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
 }
 
 .envision-projects-desc p {
@@ -954,10 +1022,10 @@ textarea.form-control {
 .envision-pillar-card {
   display: flex;
   align-items: flex-start;
-  gap: 1.15rem;
-  padding: 1.5rem;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.88);
+  gap: 1rem;
+  padding: 1.35rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(0, 0, 0, 0.07);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -967,6 +1035,33 @@ textarea.form-control {
   transform: translateY(-3px);
   border-color: rgba(155, 17, 30, 0.3);
   box-shadow: 0 10px 24px rgba(155, 17, 30, 0.08);
+}
+
+.envision-pillar-card .pillar-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(155, 17, 30, 0.08);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.envision-pillar-card h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin: 0 0 0.35rem 0;
+}
+
+.envision-pillar-card p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
 }
 
 .envision-pillar-card .pillar-icon {
@@ -1194,13 +1289,29 @@ textarea.form-control {
   .envision-projects-pillars {
     grid-template-columns: 1fr;
   }
-  .envision-projects-banner {
-    padding: 2.25rem 1.5rem;
-  }
   .projects-grid-intro {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .envision-accordion-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1.1rem;
+  }
+  .accordion-right {
+    width: 100%;
+  }
+  .accordion-toggle-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .envision-projects-content {
+    padding: 1.25rem 1rem 1.5rem;
   }
 }
 
