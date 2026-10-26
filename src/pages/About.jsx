@@ -1,6 +1,17 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { User, GraduationCap, Rocket, Compass, Globe, Target } from 'lucide-react';
+import { 
+  User, 
+  GraduationCap, 
+  Rocket, 
+  Compass, 
+  Target, 
+  Globe, 
+  Layers, 
+  Cpu, 
+  Radio, 
+  Users 
+} from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import './Pages.css';
 
@@ -12,12 +23,12 @@ const About = () => {
     { title: "Liderlik", label: "Girişim & Organizasyon", desc: "Şirket, medya, gençlik hareketleri ve siyasi organizasyonlarda kurucu ve yönetici roller." },
   ];
 
-  const quickNav = [
+  // Kişisel Biyografi Bölümleri
+  const personalNav = [
     { id: "hakkimda-bolumu", label: "Hakkımda", icon: <User size={15} /> },
     { id: "egitim-ve-yolculuk", label: "Eğitim & Kariyer", icon: <GraduationCap size={15} /> },
-    { id: "girisimcilik-ve-teknoloji", label: "Girişimcilik ve Teknoloji", icon: <Rocket size={15} /> },
-    { id: "yonetim-ve-felsefem", label: "Yönetim Anlayışım & Felsefe", icon: <Compass size={15} /> },
-    { id: "envision-station", label: "Envision Station", icon: <Globe size={15} /> },
+    { id: "girisimcilik-ve-teknoloji", label: "Girişimcilik & Teknoloji", icon: <Rocket size={15} /> },
+    { id: "yonetim-ve-felsefem", label: "Yönetim & Felsefem", icon: <Compass size={15} /> },
     { id: "gelecek-vizyonum", label: "Gelecek Vizyonum", icon: <Target size={15} /> },
   ];
 
@@ -41,7 +52,8 @@ const About = () => {
       <div className="about-quick-nav-wrapper">
         <span className="about-quick-nav-title">Bölümlere Hızlı Geçiş</span>
         <div className="about-quick-nav">
-          {quickNav.map((item) => (
+          {/* Kişisel Bölümler */}
+          {personalNav.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
@@ -52,9 +64,24 @@ const About = () => {
               <span>{item.label}</span>
             </button>
           ))}
+
+          {/* Dikey Ayırıcı */}
+          <div className="quick-nav-divider" aria-hidden="true"></div>
+
+          {/* Özel Vurgulu Envision Station Butonu */}
+          <button
+            onClick={() => scrollToSection("envision-station-showcase")}
+            className="quick-nav-btn envision-special-btn"
+            type="button"
+          >
+            <span className="quick-nav-icon"><Globe size={16} /></span>
+            <span>ENVISION STATION</span>
+            <span className="special-nav-tag">EKOSİSTEM</span>
+          </button>
         </div>
       </div>
 
+      {/* 1. PENCERE: KİŞİSEL BİYOGRAFİ & VİZYON KARTI */}
       <div className="about-content glass card-padding">
         <div className="about-text">
           
@@ -162,36 +189,7 @@ const About = () => {
             </p>
           </section>
 
-          {/* Bölüm 5: ENVISION STATION — Vizyonun Ortak Merkezi */}
-          <section id="envision-station" className="about-section">
-            <div className="about-section-header">
-              <span className="about-section-icon"><Globe size={22} /></span>
-              <h2 className="about-section-title">ENVISION STATION — Vizyonun Ortak Merkezi</h2>
-            </div>
-            <p>
-              Zaman içerisinde teknoloji, medya, topluluk yönetimi ve girişimcilik alanlarında yürüttüğüm çalışmaların birbirinden farklı görünmesine rağmen aynı düşünsel temelde birleştiğini fark ettim.
-            </p>
-            <p>
-              Bu bütünlüğü ifade etmek amacıyla <strong className="text-highlight">Envision Station</strong> vizyonunu oluşturdum.
-            </p>
-            <p>
-              Envision Station, farklı disiplinlerde geliştirdiğim fikirlerin, projelerin, girişimlerin ve organizasyonların ortak stratejik merkezini temsil ediyor. Tek bir şirketi, ürünü veya sektörü tanımlamaktan ziyade, üretim anlayışımın ve uzun vadeli hedeflerimin bir araya geldiği daha geniş bir yapıyı ifade ediyor.
-            </p>
-            <p>
-              Bu ekosistemde SliferSoft teknoloji ve yazılım odaklı çalışmaların merkezinde konumlanırken; dijital medya, topluluk oluşturma, organizasyon ve diğer yaratıcı girişimler farklı alanlarda gelişimlerini sürdürüyor.
-            </p>
-            <p>
-              Envision Station'ın temelinde, birbirinden bağımsız görünen çalışmalar arasında stratejik bağlar kurabilme düşüncesi bulunuyor. Teknolojik bir ürünün güçlü bir iletişim stratejisine, bir topluluğun sürdürülebilir bir dijital altyapıya, bir medya organizasyonunun ise etkin bir yönetim sistemine ihtiyaç duyabileceğine inanıyorum.
-            </p>
-            <p>
-              Farklı alanlarda edindiğim deneyimleri birbirinden kopuk faaliyetler olarak değerlendirmek yerine, birbirini besleyen yetkinlikler ve gelişim fırsatları olarak görüyorum.
-            </p>
-            <p>
-              Bu nedenle Envision Station benim için yalnızca bugünkü çalışmalarımı tanımlayan bir kavram değil; gelecekte inşa etmek istediğim girişimcilik ekosisteminin de düşünsel temelidir.
-            </p>
-          </section>
-
-          {/* Bölüm 6: Gelecek Vizyonum */}
+          {/* Bölüm 5: Gelecek Vizyonum */}
           <section id="gelecek-vizyonum" className="about-section">
             <div className="about-section-header">
               <span className="about-section-icon"><Target size={22} /></span>
@@ -211,18 +209,82 @@ const About = () => {
             </p>
           </section>
 
-          <blockquote className="premium-quote">
-            "Bir fikri yalnızca hayal etmek değil; onu planlamak, geliştirmek, insanlarla buluşturmak ve gerçek bir yapıya dönüştürmek."
-          </blockquote>
         </div>
-        
+      </div>
+
+      {/* 2. PENCERE: ÖZEL VE AYRI ENVISION STATION EKOSİSTEM VİTRİNİ */}
+      <div id="envision-station-showcase" className="envision-showcase-window glass">
+        <div className="envision-window-glow" aria-hidden="true"></div>
+
+        <div className="envision-badge">
+          <Layers size={14} />
+          <span>Ortak Stratejik Çatı & Ekosistem</span>
+        </div>
+
+        <div className="envision-header-group">
+          <h2 className="envision-main-title">
+            ENVISION STATION
+          </h2>
+          <span className="envision-subtitle-tag">Vizyonun Ortak Merkezi</span>
+        </div>
+
+        <div className="envision-body-text">
+          <p>
+            Zaman içerisinde teknoloji, medya, topluluk yönetimi ve girişimcilik alanlarında yürüttüğüm çalışmaların birbirinden farklı görünmesine rağmen aynı düşünsel temelde birleştiğini fark ettim.
+          </p>
+          <p>
+            Bu bütünlüğü ifade etmek amacıyla <strong className="text-highlight">Envision Station</strong> vizyonunu oluşturdum.
+          </p>
+          <p>
+            Envision Station, farklı disiplinlerde geliştirdiğim fikirlerin, projelerin, girişimlerin ve organizasyonların ortak stratejik merkezini temsil ediyor. Tek bir şirketi, ürünü veya sektörü tanımlamaktan ziyade, üretim anlayışımın ve uzun vadeli hedeflerimin bir araya geldiği daha geniş bir yapıyı ifade ediyor.
+          </p>
+
+          {/* 3 Sütunlu Ekosistem Çatısı Görsel Kartları */}
+          <div className="envision-ecosystem-grid">
+            <div className="envision-eco-card">
+              <div className="envision-eco-icon"><Cpu size={24} /></div>
+              <h4>SliferSoft</h4>
+              <p>Teknoloji, yazılım mühendisliği, ölçeklenebilir dijital ürünler ve sistem mimarisi.</p>
+            </div>
+            <div className="envision-eco-card">
+              <div className="envision-eco-icon"><Radio size={24} /></div>
+              <h4>Medya & İletişim</h4>
+              <p>Manşet Alanya, dijital yayıncılık, teknik prodüksiyon ve stratejik kurumsal iletişim.</p>
+            </div>
+            <div className="envision-eco-card">
+              <div className="envision-eco-icon"><Users size={24} /></div>
+              <h4>Topluluk & E-Spor</h4>
+              <p>Alanya Taudra E-Sports (ATE), sivil inisiyatifler ve dijital kitle etkileşimi.</p>
+            </div>
+          </div>
+
+          <p>
+            Bu ekosistemde SliferSoft teknoloji ve yazılım odaklı çalışmaların merkezinde konumlanırken; dijital medya, topluluk oluşturma, organizasyon ve diğer yaratıcı girişimler farklı alanlarda gelişimlerini sürdürüyor.
+          </p>
+          <p>
+            Envision Station'ın temelinde, birbirinden bağımsız görünen çalışmalar arasında stratejik bağlar kurabilme düşüncesi bulunuyor. Teknolojik bir ürünün güçlü bir iletişim stratejisine, bir topluluğun sürdürülebilir bir dijital altyapıya, bir medya organizasyonunun ise etkin bir yönetim sistemine ihtiyaç duyabileceğine inanıyorum.
+          </p>
+          <p>
+            Farklı alanlarda edindiğim deneyimleri birbirinden kopuk faaliyetler olarak değerlendirmek yerine, birbirini besleyen yetkinlikler ve gelişim fırsatları olarak görüyorum.
+          </p>
+          <p>
+            Bu nedenle Envision Station benim için yalnızca bugünkü çalışmalarımı tanımlayan bir kavram değil; gelecekte inşa etmek istediğim girişimcilik ekosisteminin de düşünsel temelidir.
+          </p>
+        </div>
+
+        {/* Özel Ekosistem Alıntısı */}
+        <blockquote className="premium-quote envision-quote">
+          "Bir fikri yalnızca hayal etmek değil; onu planlamak, geliştirmek, insanlarla buluşturmak ve gerçek bir yapıya dönüştürmek."
+        </blockquote>
+
         <div className="cta-container">
-          <Link to="/projeler" className="btn-primary">
+          <Link to="/projeler" className="btn-primary envision-cta-btn">
             ENVISION STATION HAKKINDA DAHA FAZLA BİLGİ
           </Link>
         </div>
       </div>
 
+      {/* 3. PENCERE: HIZLI BİLGİLER */}
       <div className="fast-facts-section">
         <h2 className="section-title">Hızlı Bilgiler</h2>
         <div className="stats-grid">
