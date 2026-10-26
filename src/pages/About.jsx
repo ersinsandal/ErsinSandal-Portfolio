@@ -265,10 +265,14 @@ const About = () => {
           </p>
         </div>
 
-        {/* Özel Ekosistem Alıntısı */}
-        <blockquote className="premium-quote envision-quote">
-          "Bir fikri yalnızca hayal etmek değil; onu planlamak, geliştirmek, insanlarla buluşturmak ve gerçek bir yapıya dönüştürmek."
-        </blockquote>
+        {/* Özel Ekosistem Alıntısı / Motto */}
+        <div className="envision-quote-wrapper">
+          <span className="envision-quote-label">Girişimcilik & Üretim Mottom</span>
+          <blockquote className="premium-quote envision-quote">
+            "Bir fikri yalnızca hayal etmek değil; onu planlamak, geliştirmek, insanlarla buluşturmak ve gerçek bir yapıya dönüştürmek."
+          </blockquote>
+          <span className="envision-quote-author">— Ersin Sandal</span>
+        </div>
 
         <div className="cta-container">
           <Link to="/projeler#envision-station" className="btn-primary envision-cta-btn">
