@@ -873,9 +873,170 @@ textarea.form-control {
   transform: translateX(5px);
 }
 
+/* Envision Projects Banner (Projects.jsx) */
+.envision-projects-banner {
+  border-radius: 28px;
+  padding: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(155, 17, 30, 0.22);
+  box-shadow: 0 25px 50px -12px rgba(155, 17, 30, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.94) 0%, rgba(248, 248, 250, 0.98) 100%);
+  scroll-margin-top: 110px;
+}
+
+.envision-projects-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4.5px;
+  background: linear-gradient(90deg, #9B111E 0%, #E63946 50%, #9B111E 100%);
+}
+
+.envision-projects-glow {
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(155, 17, 30, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.envision-projects-content {
+  position: relative;
+  z-index: 1;
+}
+
+.envision-projects-header {
+  margin-bottom: 1.5rem;
+}
+
+.envision-projects-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 2.4rem);
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin: 0 0 0.35rem 0;
+  letter-spacing: -0.02em;
+}
+
+.envision-projects-lead {
+  font-size: 1.12rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 0.5rem 0 0 0;
+}
+
+.envision-projects-desc {
+  font-size: 1.05rem;
+  color: #2D2D32;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.envision-projects-desc p {
+  margin-bottom: 0.75rem;
+}
+
+.envision-projects-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.envision-pillar-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.15rem;
+  padding: 1.5rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.envision-pillar-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(155, 17, 30, 0.3);
+  box-shadow: 0 10px 24px rgba(155, 17, 30, 0.08);
+}
+
+.envision-pillar-card .pillar-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(155, 17, 30, 0.08);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.envision-pillar-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin: 0 0 0.35rem 0;
+}
+
+.envision-pillar-card p {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Projects Grid Intro Bar */
+.projects-grid-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.projects-intro-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin: 0 0 0.35rem 0;
+}
+
+.projects-intro-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.projects-count-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.9rem;
+  border-radius: 100px;
+  background: rgba(155, 17, 30, 0.08);
+  border: 1px solid rgba(155, 17, 30, 0.2);
+  color: var(--color-primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
 /* Modern Projects Grid (Projects.jsx) */
 .projects-grid-section {
-  margin-top: 4rem;
+  margin-top: 1rem;
 }
 
 .modern-projects-grid {
@@ -1027,5 +1188,19 @@ textarea.form-control {
 
 .btn-modern-link:hover span {
   transform: translateX(5px);
+}
+
+@media (max-width: 900px) {
+  .envision-projects-pillars {
+    grid-template-columns: 1fr;
+  }
+  .envision-projects-banner {
+    padding: 2.25rem 1.5rem;
+  }
+  .projects-grid-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
 }
 

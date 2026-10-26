@@ -271,7 +271,7 @@ const About = () => {
         </blockquote>
 
         <div className="cta-container">
-          <Link to="/projeler" className="btn-primary envision-cta-btn">
+          <Link to="/projeler#envision-station" className="btn-primary envision-cta-btn">
             ENVISION STATION HAKKINDA DAHA FAZLA BİLGİ
           </Link>
         </div>
