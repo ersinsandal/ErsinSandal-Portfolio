@@ -39,7 +39,7 @@ const Home = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            Bilgisayar Mühendisi • Teknoloji Girişimcisi • Medya Yöneticisi • Siyasetçi
+            BİLGİSAYAR MÜHENDİSİ • TEKNOLOJİ GİRİŞİMCİSİ • MEDYA YÖNETİCİSİ • SİYASETÇİ
           </motion.div>
 
           <motion.div
@@ -62,7 +62,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.7 }}
           >
             <Link to="/projeler" className="btn-primary">
-              Projelerimi Keşfet
+              PROJELERİMİ KEŞFET
             </Link>
           </motion.div>
         </div>
