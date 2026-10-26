@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import esportre from '../assets/esportre.png';
+import esportre from '../assets/esportre.jpg';
 import './Home.css';
 
 const Home = () => {
@@ -81,10 +81,6 @@ const Home = () => {
                 src={esportre}
                 alt="Ersin Sandal" 
                 className="portrait-image"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = 'https://via.placeholder.com/600x800/FFFFFF/9B111E?text=Fotoğraf+Buraya+(ersin-portrait.jpg)';
-                }}
               />
             </div>
             
