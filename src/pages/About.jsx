@@ -269,7 +269,7 @@ const About = () => {
         <div className="envision-quote-wrapper">
           <span className="envision-quote-label">Girişimcilik & Üretim Mottom</span>
           <blockquote className="premium-quote envision-quote">
-            "Bir fikri yalnızca hayal etmek değil; onu planlamak, geliştirmek, insanlarla buluşturmak ve gerçek bir yapıya dönüştürmek."
+            "Asıl başarı bir fikri yalnızca hayal etmek değil; onu planlamak, geliştirmek, insanlarla buluşturmak ve gerçek bir yapıya dönüştürmektir."
           </blockquote>
           <span className="envision-quote-author">— Ersin Sandal</span>
         </div>
