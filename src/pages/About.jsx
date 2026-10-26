@@ -7,7 +7,6 @@ import {
   Compass, 
   Target, 
   Globe, 
-  Layers, 
   Cpu, 
   Radio, 
   Users 
@@ -76,7 +75,6 @@ const About = () => {
           >
             <span className="quick-nav-icon"><Globe size={16} /></span>
             <span>ENVISION STATION</span>
-            <span className="special-nav-tag">EKOSİSTEM</span>
           </button>
         </div>
       </div>
@@ -212,14 +210,9 @@ const About = () => {
         </div>
       </div>
 
-      {/* 2. PENCERE: ÖZEL VE AYRI ENVISION STATION EKOSİSTEM VİTRİNİ */}
+      {/* 2. PENCERE: ÖZEL VE AYRI ENVISION STATION VİTRİNİ */}
       <div id="envision-station-showcase" className="envision-showcase-window glass">
         <div className="envision-window-glow" aria-hidden="true"></div>
-
-        <div className="envision-badge">
-          <Layers size={14} />
-          <span>Ortak Stratejik Çatı & Ekosistem</span>
-        </div>
 
         <div className="envision-header-group">
           <h2 className="envision-main-title">
@@ -239,27 +232,27 @@ const About = () => {
             Envision Station, farklı disiplinlerde geliştirdiğim fikirlerin, projelerin, girişimlerin ve organizasyonların ortak stratejik merkezini temsil ediyor. Tek bir şirketi, ürünü veya sektörü tanımlamaktan ziyade, üretim anlayışımın ve uzun vadeli hedeflerimin bir araya geldiği daha geniş bir yapıyı ifade ediyor.
           </p>
 
-          {/* 3 Sütunlu Ekosistem Çatısı Görsel Kartları */}
+          {/* 3 Sütunlu Stratejik Yapı Mimarisi Görsel Kartları */}
           <div className="envision-ecosystem-grid">
             <div className="envision-eco-card">
               <div className="envision-eco-icon"><Cpu size={24} /></div>
-              <h4>SliferSoft</h4>
-              <p>Teknoloji, yazılım mühendisliği, ölçeklenebilir dijital ürünler ve sistem mimarisi.</p>
+              <h4>Teknoloji & Yazılım Mimarisi</h4>
+              <p>Ölçeklenebilir dijital ürünler, yazılım mühendisliği, sistem altyapısı ve yenilikçi çözümler üreten teknik omurga.</p>
             </div>
             <div className="envision-eco-card">
               <div className="envision-eco-icon"><Radio size={24} /></div>
-              <h4>Medya & İletişim</h4>
-              <p>Manşet Alanya, dijital yayıncılık, teknik prodüksiyon ve stratejik kurumsal iletişim.</p>
+              <h4>Medya & Stratejik İletişim</h4>
+              <p>Dijital yayıncılık, teknik prodüksiyon, kurumsal temsil ve üretilen değerin kitlelere ulaştırılmasını sağlayan operasyonel dinamikler.</p>
             </div>
             <div className="envision-eco-card">
               <div className="envision-eco-icon"><Users size={24} /></div>
-              <h4>Topluluk & E-Spor</h4>
-              <p>Alanya Taudra E-Sports (ATE), sivil inisiyatifler ve dijital kitle etkileşimi.</p>
+              <h4>Topluluk & Organizasyon Yönetimi</h4>
+              <p>Ortak paydada buluşan kitle ağları, sivil inisiyatifler, sosyal etkileşim ve sürdürülebilir yönetim zeminleri.</p>
             </div>
           </div>
 
           <p>
-            Bu ekosistemde SliferSoft teknoloji ve yazılım odaklı çalışmaların merkezinde konumlanırken; dijital medya, topluluk oluşturma, organizasyon ve diğer yaratıcı girişimler farklı alanlarda gelişimlerini sürdürüyor.
+            Bu yapıda teknoloji ve yazılım odaklı üretimler işin teknik ve operasyonel merkezinde konumlanırken; dijital medya, topluluk yönetimi ve stratejik organizasyonlar birbirini besleyen bağımsız eksenler olarak gelişimlerini sürdürüyor.
           </p>
           <p>
             Envision Station'ın temelinde, birbirinden bağımsız görünen çalışmalar arasında stratejik bağlar kurabilme düşüncesi bulunuyor. Teknolojik bir ürünün güçlü bir iletişim stratejisine, bir topluluğun sürdürülebilir bir dijital altyapıya, bir medya organizasyonunun ise etkin bir yönetim sistemine ihtiyaç duyabileceğine inanıyorum.
