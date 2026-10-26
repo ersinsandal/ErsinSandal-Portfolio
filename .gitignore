@@ -21,6 +21,8 @@ dist-ssr/
 .env
 .env.*
 !.env.example
+.secret_originals/
+**/secret_originals/**
 
 # Editor and OS
 .vscode/*

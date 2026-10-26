@@ -31,6 +31,8 @@ const Projects = () => {
                         src={project.logo} 
                         alt={project.title} 
                         className={`modern-project-logo ${project.blurLogo ? 'blur-logo' : ''}`}
+                        onContextMenu={project.blurLogo ? (e) => e.preventDefault() : undefined}
+                        draggable={!project.blurLogo}
                       />
                     </div>
                   )}

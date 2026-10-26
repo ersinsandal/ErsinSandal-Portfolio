@@ -605,7 +605,7 @@ export const projectsData = [
     id: "lucklick",
     title: "LuckyLick",
     logo: logoLuckyLick,
-    blurLogo: false,
+    blurLogo: true,
     subtitle: "Deneysel ISP Düzeyinde Sansür Atlama ve DNS Tünelleme Araştırması",
     category: "Siber Güvenlik & Ağ Araştırması",
     shortDesc: "VPN olmadan DNS-over-HTTPS (DoH) ve çok iş parçacıklı ters vekil üzerinden ISP engellerini aşan deneysel siber güvenlik çalışması.",

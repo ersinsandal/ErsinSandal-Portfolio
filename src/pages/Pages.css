@@ -622,6 +622,9 @@ textarea.form-control {
   filter: blur(5px);
   opacity: 0.8;
   transform: scale(1.1); /* Prevent blur edges from showing */
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 
 .modern-card-title-group {
