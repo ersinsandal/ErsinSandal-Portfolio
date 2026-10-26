@@ -33,4 +33,4 @@ def upload_dir(local_dir):
 
 upload_dir('dist')
 ftp.quit()
-print("🎉 Deploy completed successfully!")
+print("[SUCCESS] Deploy completed successfully!")
