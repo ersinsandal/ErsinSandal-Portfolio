@@ -8,6 +8,7 @@ import logoNaviSecret from '../assets/navisecret.svg';
 import logoStorySepeti from '../assets/storysepeti.png';
 import logoSliferJump from '../assets/sliferjump.png';
 import logoLuckyLick from '../assets/lucklick.png';
+import logoB2X from '../assets/b2x.jpeg';
 
 export const projectsData = [
   {
@@ -377,6 +378,8 @@ export const projectsData = [
   {
     id: "b2x",
     title: "B2X",
+    logo: logoB2X,
+    blurLogo: false,
     subtitle: "LoRa Tabanlı Düşük Güçlü Uzun Mesafe Haberleşme Sistemi",
     category: "LoRa Haberleşme Sistemi",
     shortDesc: "Düşük güçlü, uzun menzilli cihazlar arası veri aktarımına yönelik nesnelerin interneti projesi.",
