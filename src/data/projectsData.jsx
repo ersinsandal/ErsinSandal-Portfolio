@@ -9,6 +9,7 @@ import logoStorySepeti from '../assets/storysepeti.png';
 import logoSliferJump from '../assets/sliferjump.png';
 import logoLuckyLick from '../assets/lucklick.png';
 import logoB2X from '../assets/b2x.jpeg';
+import logoIlanZeka from '../assets/ilanzeka.jpg';
 
 export const projectsData = [
   {
@@ -451,6 +452,8 @@ export const projectsData = [
   {
     id: "ilanzeka",
     title: "İlanZeka",
+    logo: logoIlanZeka,
+    blurLogo: false,
     subtitle: "ARGEYA Bünyesinde Profesyonel Yazılım Projesi",
     category: "Kurumsal Yazılım Projesi",
     shortDesc: "ARGEYA bünyesindeki yazılım geliştirme stajı kapsamında üzerinde çalışılan profesyonel proje.",
