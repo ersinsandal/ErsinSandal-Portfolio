@@ -273,7 +273,7 @@ export const projectsData = [
     subtitle: "Sensör Destekli Deterministik Durak-Araç Haberleşme Sistemi",
     category: "IoT & Kablosuz Haberleşme Sistemi",
     shortDesc: "Pasif toplu taşıma duraklarını deterministik uzun menzilli LoRa telemetrisi ve sensör doğrulamasıyla akıllı IoT düğümlerine dönüştüren yeni nesil ulaşım altyapısı.",
-    status: "Tamamlandı",
+    status: "Tamamlandı / Açık Kaynak",
     audience: null,
     owner: null,
     content: (
@@ -337,12 +337,18 @@ export const projectsData = [
           <div className="meta-item" style={{ gridColumn: '1 / -1' }}><span className="meta-label">Teknoloji Yığını:</span> Python 3.10+ • DNS-over-HTTPS (DoH) • TLS SNI Injection • HTTP 206 Partial Content Streaming • Vanilla JS SPA</div>
         </div>
 
-        <h2>LuckyLick Nedir?</h2>
-        <p>LuckyLick, internet servis sağlayıcı (ISP) düzeyindeki sansür ve DNS zehirlenmesi mekanizmalarının <strong>üçüncü taraf bir VPN veya tarayıcı eklentisi olmadan</strong> nasıl aşılabileceğini araştıran deneysel bir siber güvenlik projesidir.</p>
-        <p>Proje şu temel tezi kanıtlar: <em>Standart bir web tarayıcısından, sıfır harici eklenti ve sıfır VPN ile yalnızca sunucu taraflı DNS tünellemesi ve HTTPS ters vekil yönlendirmesiyle engellenmiş CDN içeriklerine doğrudan erişilebilir.</em></p>
+        <h2>LuckyLick Nedir ve Nasıl Çalışır?</h2>
+        <p>LuckyLick, internet servis sağlayıcı (ISP) düzeyindeki DNS engellerini ve sansür mekanizmalarını <strong>üçüncü taraf bir VPN veya tarayıcı eklentisi olmadan</strong> aşmayı araştıran deneysel bir siber güvenlik ve ağ tünelleme projesidir.</p>
+        <p>Proje, <em>theuselessweb.com</em> konseptinden esinlenen tek tıkla şans odaklı bir web arayüzü sunar. Kullanıcı butona bastığında sistem, Türkiye'de ISP düzeyinde en katı idari erişim engellerine tabi tutulan yetişkin video platformlarının API ve akış havuzlarından rastgele bir içerik seçer ve bunu doğrudan tarayıcıda oynatır.</p>
+        <p>Projenin kanıtladığı temel bilimsel tez şudur: <em>Standart bir web tarayıcısından, istemci tarafında hiçbir VPN, proxy eklentisi veya DNS yapılandırmasına ihtiyaç kalmadan; yalnızca yerel ters vekil (reverse proxy) ve DoH (DNS-over-HTTPS) tünellemesiyle engellenmiş CDN video akışlarına gecikmesiz ve doğrudan erişilebilir.</em></p>
 
-        <h2>Neden Bu Test Alanı Seçildi?</h2>
-        <p>Araştırma, ISP'ler tarafından en katı biçimde engellenen ve aynı zamanda çok katmanlı CDN ağları, süre sınırlı imzalı tokenler ve uyarlamalı akış manifestoları barındıran zorlu platformları kıyaslama testi (benchmark) olarak seçmiştir. Amaç, en yüksek sürtünmeli trafik tünelleme senaryosunda algoritmanın başarısını test etmektir.</p>
+        <h2>Neden Yetişkin Video Platformları Test Alanı Olarak Seçildi?</h2>
+        <p>Araştırmada test ortamı olarak özellikle bu platformların tercih edilme sebebi rastgele bir seçim olmayıp, geliştirilen tünelleme algoritmasının sınırlarını zorlayan şu teknik ölçütlere dayanmaktadır:</p>
+        <ul>
+          <li><strong>En Katı ISP ve DPI Regülasyonları:</strong> Türkiye'deki internet servis sağlayıcıları ve DPI (Derin Paket İncelemesi) sistemleri en agresif ve çok katmanlı engelleme kurallarını bu platformlara uygulamaktadır.</li>
+          <li><strong>Yüksek Sürtünmeli CDN Mimarisi:</strong> Bu platformlar; çok katmanlı küresel CDN ağları, süre sınırlı dinamik imzalı tokenler, sıkı Origin/Referer başlık doğrulaması ve uyarlamalı parçalı video akışları (chunked streaming) kullanır.</li>
+          <li><strong>Nihai Kıyaslama Testi (Ultimate Benchmark):</strong> Geliştirilen yerel DoH ve proxy algoritması; internetteki en yüksek sürtünmeli, en sıkı korunan ve en katı engellenmiş bu medya akışlarını <em>HTTP 206 Partial Content</em> ile gecikmesiz oynatabiliyorsa, teorik olarak ISP düzeyindeki tüm DNS engellerini aşabilecek güçte olduğunu ampirik olarak kanıtlamış olur.</li>
+        </ul>
 
         <h2>Temel Teknik İnovasyonlar</h2>
         <ul>
