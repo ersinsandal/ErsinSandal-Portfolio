@@ -5,7 +5,7 @@ import './ProjectDetail.css';
 
 const ProjectDetail = () => {
   const { id } = useParams();
-  const project = projectsData.find(p => p.id === id);
+  const project = projectsData.find(p => p.id === id || (id === 'lucklick' && p.id === 'luckylick'));
 
   if (!project) {
     return (

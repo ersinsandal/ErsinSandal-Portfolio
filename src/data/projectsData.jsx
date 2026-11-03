@@ -7,7 +7,7 @@ import logoAte from '../assets/ate.png';
 import logoNaviSecret from '../assets/navisecret.svg';
 import logoStorySepeti from '../assets/storysepeti.png';
 import logoSliferJump from '../assets/sliferjump.png';
-import logoLuckyLick from '../assets/lucklick.png';
+import logoLuckyLick from '../assets/luckylick.png';
 import logoB2X from '../assets/b2x.jpeg';
 import logoIlanZeka from '../assets/ilanzeka.jpg';
 
@@ -315,7 +315,7 @@ export const projectsData = [
     )
   },
   {
-    id: "lucklick",
+    id: "luckylick",
     title: "LuckyLick",
     logo: logoLuckyLick,
     blurLogo: true,
