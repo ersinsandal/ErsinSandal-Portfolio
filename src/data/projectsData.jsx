@@ -138,7 +138,7 @@ export const projectsData = [
   },
   {
     id: "ate",
-    title: "ATE",
+    title: "Alanya Taudra E-Sports (ATE)",
     logo: logoAte,
     blurLogo: false,
     subtitle: "Bağımsız E-Spor Markası & ATE Digital Arena Platformu",
