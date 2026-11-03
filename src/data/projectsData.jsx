@@ -633,7 +633,7 @@ export const projectsData = [
     subtitle: "Ham Pikseller (Raw Pixels) vs. HOG vs. Çok Ölçekli Mekansal LBP (MS-S-LBP)",
     category: "Bilgisayarlı Görü Araştırması",
     shortDesc: "Ham piksel, HOG ve Çok Ölçekli Mekansal LBP özniteliklerinin üç farklı veri kümesinde (Fashion-MNIST, CIFAR-10, KTH-TIPS) sınıflandırma başarısını ve hesaplama karmaşıklığını kıyaslayan ampirik araştırma.",
-    status: "Tamamlandı",
+    status: "Akademik",
     audience: null,
     owner: null,
     content: (
@@ -677,7 +677,7 @@ export const projectsData = [
     subtitle: "Yapısal, Gerçek Dünya ve Doku Veri Setleri Üzerinde Farklı Makine Öğrenmesi Sınıflandırıcılarının HOG Tabanlı Değerlendirilmesi",
     category: "Örüntü Tanıma & Makine Öğrenmesi",
     shortDesc: "HOG öznitelik temsili sabit tutularak Linear SVM, KNN, Random Forest ve MLP algoritmalarının tümevarımsal önyargılarını ve genelleme sınırlarını karşılaştıran nicel analiz.",
-    status: "Tamamlandı",
+    status: "Akademik",
     audience: null,
     owner: null,
     content: (
@@ -720,7 +720,7 @@ export const projectsData = [
     subtitle: "Global Histogram Eşitleme (HE), Kontrast Sınırlı Uyarlamalı Histogram Eşitleme (CLAHE) ve Parlaklık Korunumlu Uyarlamalı Gama Düzeltme (BPAGC)",
     category: "Dijital Görüntü İşleme Araştırması",
     shortDesc: "8 farklı görüntü modalitesi üzerinde HE, CLAHE ve BPAGC algoritmalarını PSNR, SSIM ve Bileşik Skor ile değerlendirerek 'Görsel Algı vs. Matematiksel Sadakat' paradoksunu kanıtlayan araştırma.",
-    status: "Tamamlandı",
+    status: "Akademik",
     audience: null,
     owner: null,
     content: (
