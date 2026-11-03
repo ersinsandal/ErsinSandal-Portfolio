@@ -267,35 +267,50 @@ export const projectsData = [
   },
   {
     id: "b2x",
-    title: "B2X",
+    title: "B2X-LoRa",
     logo: logoB2X,
     blurLogo: false,
-    subtitle: "LoRa Tabanlı Düşük Güçlü Uzun Mesafe Haberleşme Sistemi",
-    category: "LoRa Haberleşme Sistemi",
-    shortDesc: "Düşük güçlü, uzun menzilli cihazlar arası veri aktarımına yönelik nesnelerin interneti projesi.",
+    subtitle: "Sensör Destekli Deterministik Durak-Araç Haberleşme Sistemi",
+    category: "IoT & Kablosuz Haberleşme Sistemi",
+    shortDesc: "Pasif toplu taşıma duraklarını deterministik uzun menzilli LoRa telemetrisi ve sensör doğrulamasıyla akıllı IoT düğümlerine dönüştüren yeni nesil ulaşım altyapısı.",
     status: "Tamamlandı",
     audience: null,
     owner: null,
     content: (
       <>
         <div className="detail-meta-grid">
-          <div className="meta-item"><span className="meta-label">Proje Türü:</span> Donanım + ağ haberleşme prototipi</div>
-          <div className="meta-item"><span className="meta-label">Durum:</span> Tamamlandı</div>
-          <div className="meta-item"><span className="meta-label">Alan:</span> Nesnelerin İnterneti • Bilgisayar Ağları • Kablosuz Haberleşme</div>
-          <div className="meta-item"><span className="meta-label">Rolüm:</span> Araştırma • Sistem Tasarımı • Teknik Geliştirme</div>
+          <div className="meta-item"><span className="meta-label">Proje Türü:</span> Donanım Prototipi + Deterministik IoT Haberleşme Altyapısı</div>
+          <div className="meta-item"><span className="meta-label">Durum:</span> Tamamlandı (Açık Kaynak Firmware & Donanım)</div>
+          <div className="meta-item"><span className="meta-label">Platform & Donanım:</span> Çift ESP32-S3 • Ra-02 LoRa (SX1278 433 MHz) • BMI160 6-Eksen IMU • PIR • LDR • MPPT Solar</div>
+          <div className="meta-item"><span className="meta-label">Rolüm:</span> Sistem Mimarisi • Gömülü C++ Yazılımı • Donanım Tasarımı • Test & Entegrasyon</div>
+          <div className="meta-item"><span className="meta-label">Kaynak Kodu:</span> <a href="https://github.com/ersinsandal/B2X-LoRa" target="_blank" rel="noreferrer">github.com/ersinsandal/B2X-LoRa</a></div>
+          <div className="meta-item" style={{ gridColumn: '1 / -1' }}><span className="meta-label">Teknoloji Yığını:</span> Gömülü C++ (Arduino/ESP-IDF) • LoRa P2P (B2X Deterministik v3.0) • FreeRTOS Durum Makineleri • Wi-Fi NTP</div>
         </div>
 
-        <h2>B2X Nedir?</h2>
-        <p>B2X, düşük güç tüketimiyle uzun mesafeli veri aktarımı gerçekleştirmek amacıyla LoRa haberleşme teknolojisi üzerine geliştirilen teknik sistemdir. Bu proje web sitesi veya mobil uygulama değildir. Fiziksel cihazlar arasında kablosuz veri aktarımına odaklanan <strong>nesnelerin interneti ve ağ haberleşme projesidir.</strong></p>
+        <h2>B2X-LoRa Nedir ve Hangi Problemi Çözer?</h2>
+        <p>Mevcut toplu taşıma sistemlerinde duraklar büyük oranda pasif fiziksel yapılardır. Yolcular gece saatlerinde, virajlı yollarda veya görüş mesafesinin azaldığı hava koşullarında el işaretiyle araç durdurmak zorunda kalmakta; şoförler durakta bekleyen yolcuları sıklıkla fark edemeyip durağı pas geçebilmekte ya da kimsenin beklemediği duraklarda gereksizce yavaşlayarak yakıt ve zaman kaybetmektedir.</p>
+        <p><strong>B2X-LoRa (Bus-to-Everything over LoRa)</strong>, durak ile otobüs arasında hücresel ağa veya harici internet bağlantısına bağımlı olmadan deterministik, doğrudan ve uzun menzilli eşler arası (peer-to-peer) RF bağlantısı kurarak bu sorunu kökten çözer.</p>
 
-        <h2>Haberleşme Mimarisi</h2>
-        <p>Temel sistem: <strong>Sensör / Veri Kaynağı → Mikrodenetleyici → LoRa Verici → Kablosuz Kanal → LoRa Alıcı → Veri İşleme</strong> şeklinde uçtan uca iletişim zincirine sahiptir.</p>
+        <h2>Sistem Mimarisi ve İki Donanım Prototipi</h2>
+        <p>Sistem, birbirleriyle 433 MHz frekans bandında deterministik paket protokolüyle haberleşen çalışan iki donanım prototipinden oluşur:</p>
+        <ul>
+          <li><strong>Akıllı Durak Ünitesi (durak.ino):</strong> ESP32-S3 ana işlemcisi, Ra-02 LoRa RF alıcı-vericisi, SSD1306 OLED durum ekranı, HC-SR501 PIR hareket sensörü, LDR ortam ışığı sensörü, ışıklı fiziksel talep butonu, DFPlayer Mini ses işlemcisi + harici hoparlör, CN3791 MPPT solar şarj devresi (6V panel + 18650 Li-Ion) ve Wi-Fi/NTP zaman istemcisi.</li>
+          <li><strong>Otobüs Araç İçi Ünitesi (otobus.ino):</strong> ESP32-S3 işlemcisi, Ra-02 LoRa modülü, SSD1306 OLED şoför bilgilendirme ekranı, kilitlenmeyen aktif sesli ikaz buzzer'ı, BMI160 6 eksenli IMU ivme/jiroskop sensörü ve yazılımsal RTC senkronizasyon motoru.</li>
+        </ul>
 
-        <h2>Neden LoRa?</h2>
-        <p>LoRa özellikle düşük güç tüketimi, uzun menzil, küçük veri paketleri ve düşük bant genişliği gereksinimi nedeniyle nesnelerin interneti uygulamalarında kullanılmaktadır. Wi-Fi yüksek veri hızına sahip olsa da güç tüketimi ve kapsama alanı açısından her senaryo için uygun değildir.</p>
+        <h2>Çalışma Mantığı ve Deterministik Durum Makineleri</h2>
+        <ul>
+          <li><strong>İki Kademeli Deterministik Yolcu Doğrulaması:</strong> Yolcu talep butonuna bastığında ekranda 15 saniyelik bir onay sayacı başlar. Sistem PIR hareket sensörüyle durakta fiziksel bir yolcunun bulunduğunu doğrular; böylece basıp kaçma veya asılsız çağrılar filtrelenir.</li>
+          <li><strong>RSSI Tabanlı Yaklaşma ve Otonom Anons:</strong> Yaklaşan otobüs her 2000 ms'de bir LoRa beacon sinyali yayar. Durak bu sinyali yakalayarak RSSI (sinyal gücü) tabanlı algoritmayla tahmini varış süresini hesaplar, sesli ve görsel bildirim üretir.</li>
+          <li><strong>Kilitlenmeyen (Non-blocking) Ses Yönetimi:</strong> ESP32'nin ana döngüsünü dondurmayan millis() tabanlı melodi motoru sayesinde ses çalınırken RF paket dinlemesi kesintisiz devam eder.</li>
+          <li><strong>Ortam Işığına Göre Dinamik Adaptasyon:</strong> LDR sensörü gece/gündüz ayrımı yaparak durak aydınlatmasını ve ekran parlaklığını otomatik ayarlar.</li>
+        </ul>
 
-        <h2>Kullanım Alanları</h2>
-        <p>Akıllı tarım, çevresel sensörler, kırsal veri toplama, uzak ekipman izleme, tesis telemetrisi ve düşük güçlü nesnelerin interneti sistemleri.</p>
+        <h2>Güvenlik ve Otonom Kaza Algılama Sistemi</h2>
+        <p>Otobüs ünitesindeki 6 eksenli BMI160 IMU sensörü, ani darbe veya devrilme anlarını (6.5g eşik değeri üzeri) gerçek zamanlı olarak algılar. Kaza anında sistem otonom olarak acil durum LoRa paketini çevreye yayar; durak ünitesi acil durum alarmı ve sesli siren moduna geçerek kurtarma ekiplerine kritik ilk saniyelerde yön gösterir.</p>
+
+        <h2>Deterministik Rota ve Çoklu Otobüs Yönetimi</h2>
+        <p>Paket protokolündeki <code>Side_ID</code> parametresi ile otobüsün gidiş mi geliş yönünde mi olduğu otomatik anlaşılır. Birden fazla otobüsün aynı anda durağa yaklaşması durumunda ise <code>Round Robin</code> kuyruk algoritması devreye girerek her otobüsün bilgisi OLED ekranda dönüşümlü olarak gösterilir.</p>
       </>
     )
   },
@@ -614,40 +629,128 @@ export const projectsData = [
   },
   {
     id: "bilgisayarli-goru",
-    title: "Bilgisayarlı Görü Özellik Karşılaştırması",
-    subtitle: "Makine Öğrenmesi ve Görüntü Sınıflandırma Araştırması",
-    category: "Makine Öğrenmesi Araştırması",
-    shortDesc: "Ham piksel, HOG ve LBP özelliklerinin farklı görüntü veri setlerindeki sınıflandırma başarısını karşılaştıran deneysel çalışma.",
+    title: "Bilgisayarlı Görmede Öznitelik Çıkarım Yöntemlerinin Nicel Karşılaştırmalı Analizi",
+    subtitle: "Ham Pikseller (Raw Pixels) vs. HOG vs. Çok Ölçekli Mekansal LBP (MS-S-LBP)",
+    category: "Bilgisayarlı Görü Araştırması",
+    shortDesc: "Ham piksel, HOG ve Çok Ölçekli Mekansal LBP özniteliklerinin üç farklı veri kümesinde (Fashion-MNIST, CIFAR-10, KTH-TIPS) sınıflandırma başarısını ve hesaplama karmaşıklığını kıyaslayan ampirik araştırma.",
     status: "Tamamlandı",
     audience: null,
     owner: null,
     content: (
       <>
         <div className="detail-meta-grid">
-          <div className="meta-item"><span className="meta-label">Proje Türü:</span> Deneysel makine öğrenmesi çalışması</div>
-          <div className="meta-item"><span className="meta-label">Durum:</span> Tamamlandı</div>
-          <div className="meta-item"><span className="meta-label">Alan:</span> Bilgisayarlı Görü • Makine Öğrenmesi • Veri Analizi</div>
-          <div className="meta-item"><span className="meta-label">Rolüm:</span> Deney Tasarımı • Modelleme • Sonuç Analizi</div>
+          <div className="meta-item"><span className="meta-label">Proje Türü:</span> Akademik Araştırma & Deneysel Kıyaslama (Benchmark)</div>
+          <div className="meta-item"><span className="meta-label">Durum:</span> Tamamlandı (Açık Kaynak & Tekrarlanabilir Python Hattı)</div>
+          <div className="meta-item"><span className="meta-label">Alan:</span> Bilgisayarlı Görü • Öznitelik Mühendisliği • Örüntü Tanıma</div>
+          <div className="meta-item"><span className="meta-label">Rolüm:</span> Bağımsız Araştırmacı • Deney Tasarımı • Algoritma Geliştirme • Matematiksel Modelleme</div>
+          <div className="meta-item"><span className="meta-label">Kaynak Kodu:</span> <a href="https://github.com/ersinsandal/Feature-Extraction-Analysis" target="_blank" rel="noreferrer">github.com/ersinsandal/Feature-Extraction-Analysis</a></div>
+          <div className="meta-item" style={{ gridColumn: '1 / -1' }}><span className="meta-label">Teknoloji Yığını:</span> Python 3.10+ • Scikit-Learn • OpenCV • TensorFlow • NumPy • Matplotlib</div>
         </div>
 
-        <h2>Projenin Amacı</h2>
-        <p>Çalışmanın amacı farklı görüntü temsil yöntemlerinin aynı sınıflandırıcı üzerindeki etkisini ölçmektir. Temel soru: <strong>Bir görüntü sınıflandırma sisteminde ham piksel, şekil tabanlı ve doku tabanlı özellikler farklı veri setlerinde nasıl davranır?</strong></p>
+        <h2>Yönetici Özeti ve Temel Bilimsel Soru</h2>
+        <p>Bilgisayarlı görü sistemlerinde başarı çoğu zaman karmaşık sınıflandırıcı mimarilerine atfedilir. Ancak asıl kritik soru şudur: <em>Bir sınıflandırma probleminde nihai doğruluğu belirleyen faktör modelin parametre sayısı mıdır, yoksa giriş verisinden çıkarılan öznitelik manifoldunun geometrik kalitesi midir?</em></p>
+        <p>Bu araştırma; derin yapay sinir ağlarının "kara kutu" doğasından kaçınarak, geleneksel matematiksel öznitelik çıkarıcılarının tümevarımsal önyargılarını (inductive bias) ve gürültü dirençlerini izole etmek amacıyla kontrollü bir deney ortamında yürütülmüştür.</p>
 
-        <h2>Veri Setleri ve Özellik Çıkarma Yöntemleri</h2>
+        <h2>İncelenen Öznitelik Temsilleri</h2>
         <ul>
-          <li><strong>Fashion-MNIST:</strong> Moda ürünlerinden oluşan gri tonlamalı veri seti.</li>
-          <li><strong>CIFAR-10:</strong> Deney için gri tonlamalı hale getirilen genel nesne görüntüleri.</li>
-          <li><strong>DTD:</strong> Doku özellikleri üzerine oluşturulmuş Describable Textures Dataset.</li>
+          <li><strong>Normalize Ham Pikseller (Raw Pixels):</strong> Görüntü yoğunluk değerlerinin [0, 1] aralığına normalize edildiği temel referans vektörü (d = 784 / 1024 / 4096).</li>
+          <li><strong>Yönlendirilmiş Gradyanlar Histogramı (HOG):</strong> Yerel kenar yönelim dağılımlarını 9 açısal dilimde toplayan, 4x4 hücre ve 2x2 blok normalizasyonu (L2-Hys) ile aydınlatma değişimlerine dirençli yapısal şekil çıkarıcısı.</li>
+          <li><strong>Çok Ölçekli Mekansal Yerel İkili Örüntüler (MS-S-LBP):</strong> P=8/R=1.0, P=16/R=2.0 ve P=24/R=3.0 yarıçaplarında 4x4 mekansal ızgara ile mikrodoku ve yüzey örüntülerini yakalayan doku deskriptörü.</li>
         </ul>
-        <p>Özellik çıkarma yöntemleri olarak Ham Piksel, HOG (kenar yönelimleri) ve LBP (doku karakteristiği) kullanılmıştır.</p>
 
-        <h2>Sınıflandırıcı ve Deney Yapısı</h2>
-        <p>Bütün deneylerde ortak olarak <strong>Destek Vektör Makineleri</strong> kullanılmıştır. Böylece özellik çıkarma yöntemlerinin sınıflandırma performansı üzerindeki etkisi daha kontrollü biçimde karşılaştırılmıştır. Eğitim verisi 10.000 örnek, test verisi 2.000 örnektir.</p>
+        <h2>Kıyaslama Veri Kümeleri ve Konsolide Sonuçlar</h2>
+        <p>Tüm deneylerde kontrollü karşılaştırma amacıyla sınıflandırıcı olarak <strong>Destek Vektör Makineleri (Linear SVM)</strong> sabit tutulmuştur:</p>
+        <ul>
+          <li><strong>Fashion-MNIST (Şekil / Silüet Odaklı):</strong> HOG %85,80 doğruluk ve 0.857 F1 skoru ile zirvede yer alırken, ham piksel %83,05'te, LBP ise %71,55'te kalmıştır.</li>
+          <li><strong>CIFAR-10 (Karmaşık Doğal Nesneler):</strong> Ham piksel %38,00 doğruluk verirken, HOG kenar bilgisini koruyarak %46,20'ye ulaşmıştır.</li>
+          <li><strong>KTH-TIPS (Doku / Yüzey Odaklı):</strong> Yüksek boyutlu doku varyasyonlarında Çok Ölçekli LBP, mikrodoku yapısını koruyarak en kararlı temsil gücünü sergilemiştir.</li>
+        </ul>
 
-        <h2>Fashion-MNIST Sonuçları</h2>
-        <p><strong>Ham Piksel: %83,05</strong> | <strong>HOG: %85,80</strong> | <strong>LBP: %71,55</strong></p>
-        <p>Bu veri setinde en yüksek performans HOG ile elde edilmiştir. Sonuç, nesnenin geometrik şeklinin önemli olduğu görüntülerde kenar yönelim bilgisinin güçlü bir temsil sağlayabildiğini göstermektedir.</p>
-        <p>Bu çalışma yalnızca yüksek doğruluk elde etmeye değil, <strong>özellik mühendisliği ile veri karakteristiği arasındaki ilişkiyi</strong> anlamaya odaklanmaktadır.</p>
+        <h2>No Free Lunch Teoreminin Doğrulanması</h2>
+        <p>Elde edilen ampirik sonuçlar makine öğrenmesindeki <em>"No Free Lunch"</em> ilkesini kesin olarak doğrulamaktadır: Evrensel olarak her senaryoda üstün tek bir öznitelik yöntemi yoktur. Nesnenin ayırt edici özelliği kontur ve silüet ise HOG; mikro yüzey yapısı ve pürüzlülük ise LBP matematiksel olarak tercih edilmelidir.</p>
+      </>
+    )
+  },
+  {
+    id: "classification-methods-analysis",
+    title: "Örüntü Tanımada Sınıflandırma Yöntemlerinin Nicel Karşılaştırmalı Analizi",
+    subtitle: "Yapısal, Gerçek Dünya ve Doku Veri Setleri Üzerinde Farklı Makine Öğrenmesi Sınıflandırıcılarının HOG Tabanlı Değerlendirilmesi",
+    category: "Örüntü Tanıma & Makine Öğrenmesi",
+    shortDesc: "HOG öznitelik temsili sabit tutularak Linear SVM, KNN, Random Forest ve MLP algoritmalarının tümevarımsal önyargılarını ve genelleme sınırlarını karşılaştıran nicel analiz.",
+    status: "Tamamlandı",
+    audience: null,
+    owner: null,
+    content: (
+      <>
+        <div className="detail-meta-grid">
+          <div className="meta-item"><span className="meta-label">Proje Türü:</span> Akademik Araştırma & Karşılaştırmalı Algoritma Analizi</div>
+          <div className="meta-item"><span className="meta-label">Durum:</span> Tamamlandı (Açık Kaynak & Tekrarlanabilir Deney Mimarisi)</div>
+          <div className="meta-item"><span className="meta-label">Alan:</span> Örüntü Tanıma • Makine Öğrenmesi • Algoritma Optimizasyonu</div>
+          <div className="meta-item"><span className="meta-label">Rolüm:</span> Bağımsız Araştırmacı • Matematiksel Deney Tasarımı • Model Eğitimi & Analiz</div>
+          <div className="meta-item"><span className="meta-label">Kaynak Kodu:</span> <a href="https://github.com/ersinsandal/Classification-Methods-Analysis" target="_blank" rel="noreferrer">github.com/ersinsandal/Classification-Methods-Analysis</a></div>
+          <div className="meta-item" style={{ gridColumn: '1 / -1' }}><span className="meta-label">Teknoloji Yığını:</span> Python 3.10+ • Scikit-Learn • TensorFlow • OpenCV • Pandas • Seaborn</div>
+        </div>
+
+        <h2>Araştırma Motivasyonu ve Kontrollü Deney Paradigması</h2>
+        <p>Bilgisayarlı görü ve örüntü tanıma literatüründe, öznitelik kalitesi ile sınıflandırma algoritmasının içsel kapasitesi sıklıkla birbirine karışmaktadır. Bu çalışmada öznitelik varyansı kaynaklı belirsizliği yok etmek adına <strong>HOG (Yönlendirilmiş Gradyanlar Histogramı)</strong> öznitelik çıkarımı tüm deneylerde <em>kesin olarak sabit tutulmuş</em>; dört farklı temel makine öğrenmesi algoritmasının saf matematiksel tepkileri incelenmiştir.</p>
+
+        <h2>Kıyaslanan Sınıflandırma Paradigmaları</h2>
+        <ul>
+          <li><strong>Destek Vektör Makineleri (Linear SVM):</strong> Sınıflar arası ayrım marjinini maksimize eden dışbükey optimizasyon modeli.</li>
+          <li><strong>K-En Yakın Komşu (KNN, k=5):</strong> Örnek tabanlı, parametrik olmayan yerel mesafe metriği.</li>
+          <li><strong>Rastgele Orman (Random Forest, n=100):</strong> Çok sayıda karar ağacının oylamasına dayalı topluluk (ensemble) modeli.</li>
+          <li><strong>Çok Katmanlı Algılayıcı (MLP):</strong> Doğrusal olmayan manifoldları öğrenebilen 128 gizli nöronlu yapay sinir ağı.</li>
+        </ul>
+
+        <h2>Veri Karakteristiği ve Ampirik Bulgular</h2>
+        <ul>
+          <li><strong>Fashion-MNIST (Doğrusal Ayrılabilir Rejim):</strong> Düzenli ve belirgin silüet verisinde dört model de neredeyse birebir aynı başarıyı göstermiştir (~%85.5 - %86.2 Doğruluk, Macro F1 ~0.858 - 0.865). Doğrusal ayrılabilir uzaylarda basit modeller karmaşık ağlarla yarışabilmektedir.</li>
+          <li><strong>CIFAR-10 (Karmaşık Görsel Bağlam):</strong> Gerçek dünya sahnelerindeki doğrusal olmayan ilişkilerde MLP, çok katmanlı soyutlama kapasitesi sayesinde %47.80 doğruluğa ulaşarak doğrusal SVM ve ağaç tabanlı modelleri geride bırakmıştır.</li>
+          <li><strong>KTH-TIPS (Boyut Laneti Rejimi - d = 34.596):</strong> Aşırı yüksek boyutlu doku sınıflandırmasında Linear SVM, marjin optimizasyonu sayesinde %64.81 doğruluk ve %70.89 kesinlik ile açık ara zirvede yer alırken; Öklid uzaklığına dayanan KNN boyut laneti nedeniyle çökerek %23.46 seviyesine gerilemiştir.</li>
+        </ul>
+
+        <h2>Hesaplama Karmaşıklığı ve Çıkarım (Test) Hızı</h2>
+        <p>Eğitim süresi ve canlı test gecikmeleri kıyaslandığında; Linear SVM'in mikrosaniye düzeyindeki çıkarım hızıyla gerçek zamanlı gömülü sistemler için en optimize algoritma olduğu, KNN'in ise test anındaki yüksek hesaplama maliyeti nedeniyle pratik darboğazlar yarattığı nicel olarak kanıtlanmıştır.</p>
+      </>
+    )
+  },
+  {
+    id: "contrast-enhancement-analysis",
+    title: "Farklı Görüntü Modalitelerinde Uzamsal Alan Kontrast İyileştirme Tekniklerinin Karşılaştırmalı Kantitatif Analizi",
+    subtitle: "Global Histogram Eşitleme (HE), Kontrast Sınırlı Uyarlamalı Histogram Eşitleme (CLAHE) ve Parlaklık Korunumlu Uyarlamalı Gama Düzeltme (BPAGC)",
+    category: "Dijital Görüntü İşleme Araştırması",
+    shortDesc: "8 farklı görüntü modalitesi üzerinde HE, CLAHE ve BPAGC algoritmalarını PSNR, SSIM ve Bileşik Skor ile değerlendirerek 'Görsel Algı vs. Matematiksel Sadakat' paradoksunu kanıtlayan araştırma.",
+    status: "Tamamlandı",
+    audience: null,
+    owner: null,
+    content: (
+      <>
+        <div className="detail-meta-grid">
+          <div className="meta-item"><span className="meta-label">Proje Türü:</span> Akademik Araştırma & Kantitatif Görüntü Kalite Analizi</div>
+          <div className="meta-item"><span className="meta-label">Durum:</span> Tamamlandı (Açık Kaynak & Tekrarlanabilir Python Kütüphanesi)</div>
+          <div className="meta-item"><span className="meta-label">Alan:</span> Dijital Görüntü İşleme • Uzamsal Alan Algoritmaları • Görüntü Kalite Değerlendirmesi</div>
+          <div className="meta-item"><span className="meta-label">Rolüm:</span> Bağımsız Araştırmacı • Matematiksel Formülasyon • Algoritma İmplementasyonu • Raporlama</div>
+          <div className="meta-item"><span className="meta-label">Kaynak Kodu:</span> <a href="https://github.com/ersinsandal/Contrast-Enhancement-Analysis" target="_blank" rel="noreferrer">github.com/ersinsandal/Contrast-Enhancement-Analysis</a></div>
+          <div className="meta-item" style={{ gridColumn: '1 / -1' }}><span className="meta-label">Teknoloji Yığını:</span> Python 3.10+ • OpenCV 4.8+ • NumPy • SciPy • Matplotlib • Scikit-Image</div>
+        </div>
+
+        <h2>Yönetici Özeti ve 'Tek Yöntem Her Şeye Uyar' Yanılgısı</h2>
+        <p>Kontrast iyileştirme; bilgisayarlı görü ve hesaplamalı fotoğrafçılıkta en kritik ön işleme adımlarından biridir. Ancak endüstride ve literatürde sıklıkla düşülen en büyük yanılgı, tüm görüntülere tek bir algoritmanın uygulanabileceği (<em>one-size-fits-all</em>) varsayımıdır. Gerçek dünyada uzamsal alan kontrast algoritmalarının davranışı; aydınlatmaya, sensör dinamiğine ve modaliteye göre kökten farklılık gösterir.</p>
+        <p>Bu araştırma, açık erişimli akademik veri tabanlarından derlenen <strong>8 farklı görüntü modalitesi</strong> (Doğal Manzara, Düşük Işık/Gece, Aşırı Parlak/Sisli, Medikal Röntgen/BT, Uydu/Hava Fotoğrafçılığı, Belge/Metin, Mikroskopi ve Yüz Görüntüleri) ve 15 temsilci test görüntüsü üzerinde yürütülmüştür.</p>
+
+        <h2>İncelenen Yöntemler ve Renk Uzayı Mimarisi</h2>
+        <p>Renkli görüntülerde kroma bozulmasını ve yapay renk kaymalarını önlemek amacıyla tüm algoritmalar <strong>YCrCb renk uzayında yalnızca parlaklık (Y) kanalına</strong> uygulanmıştır:</p>
+        <ul>
+          <li><strong>Global Histogram Eşitleme (HE):</strong> Kümülatif Dağılım Fonksiyonu (CDF) ile yoğunluk değerlerini dinamik aralığın tamamına yayar. Hızlıdır ancak yerel bağlamdan yoksun olduğu için düz alanlarda şiddetli gürültü patlamasına ve yapay parlamaya neden olur.</li>
+          <li><strong>Kontrast Sınırlı Uyarlamalı HE (CLAHE):</strong> Görüntüyü 8x8 yerel bloklara böler, belirlenen eşik (clip limit = 2.0) üzerindeki pikselleri kırparak eşit dağıtır ve blok sınırlarını çift doğrusal enterpolasyonla birleştirir. Gürültüyü sınırlarken olağanüstü yerel detay sunar.</li>
+          <li><strong>Parlaklık Korunumlu Uyarlamalı Gama Düzeltme (BPAGC):</strong> Görüntünün ortalama parlaklık istatistiklerinden dinamik gama türeten doğrusal olmayan güç yasası dönüşümüdür. Doğal tonları ve yapısal sadakati en yüksek oranda korur.</li>
+        </ul>
+
+        <h2>İki Büyük Bilimsel Keşif ve Bulgular</h2>
+        <ul>
+          <li><strong>Görsel Algı vs. Matematiksel Sadakat İkilemi:</strong> Global Histogram Eşitleme (HE) insan gözüne ilk bakışta çok çarpıcı ve kontrastı dramatik biçimde artmış gibi görünse de; MSE ve SSIM metriklerinde yapısal bilginin ağır biçimde tahrip edildiğini göstermiştir. Matematiksel sadakat ve yapısal korunumda BPAGC ve CLAHE üstünlük sağlamıştır.</li>
+          <li><strong>Medikal Radyografide Klinik Teşhis Paradoksu:</strong> Göğüs röntgeni gibi klinik görüntülerde yüksek kontrast artışı hekimin lezyonu ayırt etmesini kolaylaştırırken, tam referanslı matematiksel metriklerde ceza puanı almaktadır. Çalışma, klinik fayda ile matematiksel metrikler arasındaki bu kritik ödünleşimi ortaya koymuştur.</li>
+        </ul>
       </>
     )
   }
